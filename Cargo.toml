@@ -1,0 +1,18 @@
+[package]
+edition = "2021"
+name = "talves_rust-napi-starter"
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Default enable napi8 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "2", default-features = false, features = ["napi8"] }
+napi-derive = "2"
+
+[build-dependencies]
+napi-build = "1"
+
+[profile.release]
+lto = true
